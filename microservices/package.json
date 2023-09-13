@@ -1,0 +1,31 @@
+{
+  "name": "microservices",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run frontend\" \"npm run products\" \"npm run orders\" \"npm run login\" \"npm run register\" \"npm run cart\"",
+    "frontend": "node ./src/frontend/server.js",
+    "products": "node ./src/products/server.js",
+    "orders": "node ./src/orders/server.js",
+    "login": "node ./src/login/server.js",
+    "register": "node ./src/register/server.js",
+    "cart": "node ./src/cart/server.js",
+    "install-all": "npm-recursive-install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mssql": "^9.1.1",
+    "redis": "^4.6.6"
+  }
+}
